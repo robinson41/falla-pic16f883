@@ -8,7 +8,6 @@
 ; __config 0x3FFF
  __CONFIG _CONFIG2, _BOR4V_BOR40V & _WRT_OFF
 ;*******************************************************************************
- #DEFINE	CBIT    D'8'   ;
  #DEFINE	CLK	PORTC,7;
  #DEFINE	DATO	PORTC,6;
  #DEFINE	LED	PORTC,5;
@@ -105,6 +104,10 @@ LOOP		    ;
  CALL	 ACT_TM1637 ;
  CALL	 RETARDO    ;
  GOTO	 LOOP	    ;
+;*******************************************************************************
+;*******************codigo adicional para comprobar falla***********************
+;******************************************************************************* 
+FALLA		;
  BSF	 LED	;
  BSF	 LED	;
  BSF	 LED	;
@@ -130,69 +133,11 @@ LOOP		    ;
  BSF	 LED	;
  BSF	 LED	;
  BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
- BSF	 LED	;
+ BSF	 LED	;hasta este punto el programa funciona en apariencia
+ ;BSF	 LED	;desde esta linea en adelante inicia la falla y cualquier linea
+;de codigo adicional hace que el problema sea mayor, si la linea esta 
+;comentariadael programa se reestablece, esto se da en el montaje fisico
+;sin embargo puede variar en la simulacion
 ;*******************************************************************************
 ;******************************CONVERSOR BCD************************************
 ;*******************************************************************************
